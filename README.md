@@ -6,27 +6,27 @@ The presets are accessible via the Command Palette, which also allows for invoca
 
 **Current presets**
 
-Readable: Makes code more readable
-Optimize: Optimizes code
-Add types: Adds typescript types
-Fix bugs: Fixes simple bugs
-Debug: Adds debugging statements
-Clean: Removes comments and logs
-Test: Writes a unit test 
+- Readable: Makes code more readable
+- Optimize: Optimizes code
+- Add types: Adds Typescript types
+- Fix bugs: Fixes simple bugs
+- Debug: Adds debugging statements
+- Clean: Removes comments and logs
+- Test: Writes a unit test 
 
 **Supported LLM providers**
 
-OpenRouter 
-Google Gemini
+- OpenRouter 
+- Google Gemini
 
 OpenRouter currently features 120+ models, both paid models such as `OpenAI: GPT-4o` and `Meta: Llama 3` as well as some free models).
 
-> At the time of writing, both OpenRouter and Google Gemini offer free signup and API keys.
+At the time of writing, both OpenRouter and Google Gemini offer free signup and API keys.
 
 **Roadmap**
 
-Tweakable LLM Parameters (such as `max_tokens` and `temperature`)
-Local LLM support
-More external LLM providers
+- Tweakable LLM Parameters (such as `max_tokens` and `temperature`)
+- Local LLM support
+- More external LLM providers
 
 **Enjoying the extension? A star on GitHub would mean a lot!**
