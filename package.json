@@ -1,0 +1,204 @@
+{
+  "name": "ai-code-brushes",
+  "displayName": "AI Code Brushes",
+  "description": "",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ai-code-brushes.readable",
+        "title": "AI Code Brushes: Make code more readable"
+      },
+      {
+        "command": "ai-code-brushes.types",
+        "title": "AI Code Brushes: Add TypeScript types"
+      },
+      {
+        "command": "ai-code-brushes.bugs",
+        "title": "AI Code Brushes: Fix bugs"
+      },
+      {
+        "command": "ai-code-brushes.debug",
+        "title": "AI Code Brushes: Add debugging statements"
+      },
+      {
+        "command": "ai-code-brushes.clean",
+        "title": "AI Code Brushes: Remove comments and logging methods"
+      },
+      {
+        "command": "ai-code-brushes.test",
+        "title": "AI Code Brushes: Write a unit test"
+      },
+      {
+        "command": "ai-code-brushes.optimize",
+        "title": "AI Code Brushes: Optimize"
+      }
+    ],
+    "configuration": {
+      "title": "Configurable AI",
+      "properties": {
+        "ai-code-brushes.apiKeyOpenRouter": {
+          "order": 0,
+          "type": "string",
+          "default": "",
+          "description": "API key for OpenRouter (in case you would like to use OpenRouter)."
+        },
+        "ai-code-brushes.apiKeyGemini": {
+          "order": 1,
+          "type": "string",
+          "default": "",
+          "description": "API key for Gemini (in case you would like to use Gemini)."
+        },
+        "ai-code-brushes.selectedProviderName": {
+          "order": 2,
+          "type": "string",
+          "default": "openrouter",
+          "enum": ["openrouter", "gemini"],
+          "description": "Select the provider you would like to use."
+        },
+        "ai-code-brushes.selectedModelName": {
+          "order": 3,
+          "type": "string",
+          "default": "google/gemma-7b-it:free",
+          "description": "Defaults to 'gemini-1.5-flash' in case you select Gemini as your provider. In case you would like to use OpenRouter, use any model name from the OpenRouter website, for example 'google/gemma-7b-it:free'."
+        },
+        "ai-code-brushes.programmingLanguage": {
+          "order": 4,
+          "type": "string",
+          "default": "auto",
+          "description": "Use 'auto' to use the language of the current file or select a specific programming language, for example `javascript`."
+        },
+        "ai-code-brushes.formatLLMResponse": {
+          "order": 5,
+          "type": "boolean",
+          "default": true,
+          "description": "Format the LLM response. This functionality removes the code block from the LLM's response and trims the result."
+        },
+        "ai-code-brushes.readablePrompt": {
+          "order": 6,
+          "type": "string",
+          "default": "Convert the following $programmingLanguage code to a more readable version. It is extremely important that you only provide the final output without any additional comments or remarks",
+          "description": ""
+        },
+        "ai-code-brushes.readableContentHandling": {
+          "order": 7,
+          "type": "string",
+          "default": "in_place",
+          "enum": ["in_place", "clipboard"],
+          "description": ""
+        },
+        "ai-code-brushes.typesPrompt": {
+          "order": 8,
+          "type": "string",
+          "default": "Add types to the following $programmingLanguage code. It is extremely important that you only provide the final output without any additional comments or remarks",
+          "description": ""
+        },
+        "ai-code-brushes.typesContentHandling": {
+          "order": 9,
+          "type": "string",
+          "default": "in_place",
+          "enum": ["in_place", "clipboard"],
+          "description": ""
+        },
+        "ai-code-brushes.bugsPrompt": {
+          "order": 10,
+          "type": "string",
+          "default": "Fix the bugs in the following $programmingLanguage code. It is extremely important that you only provide the final output without any additional comments or remarks",
+          "description": ""
+        },
+        "ai-code-brushes.bugsContentHandling": {
+          "order": 11,
+          "type": "string",
+          "default": "in_place",
+          "enum": ["in_place", "clipboard"],
+          "description": ""
+        },
+        "ai-code-brushes.debugPrompt": {
+          "order": 12,
+          "type": "string",
+          "default": "Add debugging statements the following $programmingLanguage code. It is extremely important that you only provide the final output without any additional comments or remarks",
+          "description": ""
+        },
+        "ai-code-brushes.debugContentHandling": {
+          "order": 13,
+          "type": "string",
+          "default": "in_place",
+          "enum": ["in_place", "clipboard"],
+          "description": ""
+        },
+        "ai-code-brushes.cleanPrompt": {
+          "order": 14,
+          "type": "string",
+          "default": "Remove comments and logging methods from the following $programmingLanguage code. It is extremely important that you only provide the final output without any additional comments or remarks",
+          "description": ""
+        },
+        "ai-code-brushes.cleanContentHandling": {
+          "order": 15,
+          "type": "string",
+          "default": "in_place",
+          "enum": ["in_place", "clipboard"],
+          "description": ""
+        },
+        "ai-code-brushes.testPrompt": {
+          "order": 16,
+          "type": "string",
+          "default": "Write a unit test for the following $programmingLanguage code. It is extremely important that you only provide the final output without any additional comments or remarks",
+          "description": ""
+        },
+        "ai-code-brushes.testContentHandling": {
+          "order": 17,
+          "type": "string",
+          "default": "clipboard",
+          "enum": ["in_place", "clipboard"],
+          "description": ""
+        },
+        "ai-code-brushes.optimizePrompt": {
+          "order": 18,
+          "type": "string",
+          "default": "Optimize the following $programmingLanguage code. It is extremely important that you only provide the final output without any additional comments or remarks",
+          "description": ""
+        },
+        "ai-code-brushes.optimizeContentHandling": {
+          "order": 19,
+          "type": "string",
+          "default": "in_place",
+          "enum": ["in_place", "clipboard"],
+          "description": ""
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.89.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}
