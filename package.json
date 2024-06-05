@@ -1,9 +1,13 @@
 {
   "name": "ai-code-brushes",
   "displayName": "AI Code Brushes",
-  "description": "",
+  "description": "Supercharge Your Coding with AI",
   "version": "1.0.0",
   "publisher": "ThijsDekkers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thijsdekkers/ai-code-brushes.git"
+  },
   "engines": {
     "vscode": "^1.89.0"
   },
