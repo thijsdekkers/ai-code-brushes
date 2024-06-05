@@ -2,8 +2,9 @@
   "name": "ai-code-brushes",
   "displayName": "AI Code Brushes",
   "description": "Supercharge Your Coding with AI",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "ThijsDekkers",
+  "icon": "assets/icon.png",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thijsdekkers/ai-code-brushes.git"
@@ -60,7 +61,7 @@
       }
     ],
     "configuration": {
-      "title": "Configurable AI",
+      "title": "AI Code Brushes",
       "properties": {
         "ai-code-brushes.apiKeyOpenRouter": {
           "order": 0,
