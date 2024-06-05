@@ -3,11 +3,24 @@
   "displayName": "AI Code Brushes",
   "description": "",
   "version": "1.0.0",
+  "publisher": "ThijsDekkers",
   "engines": {
     "vscode": "^1.89.0"
   },
   "categories": [
+    "Machine Learning",
+    "Formatters",
+    "Debuggers",
+    "Linters",
+    "Testing",
     "Other"
+  ],
+  "keywords": [
+    "AI",
+    "Brushes",
+    "LLM",
+    "OpenRouter",
+    "Gemini"
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
