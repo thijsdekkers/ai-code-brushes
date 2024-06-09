@@ -2,6 +2,8 @@
 
 **AI Code Brushes** is a Visual Studio Code extension that allows you to apply ML-driven modifications to highlighted code. It features a collection of presets similar to those featured in the Github Copilot Labs Extension.
 
+![Example](assets/example.gif)
+
 The presets are accessible via the Command Palette, which also allows for invocation through Keyboard Shortcuts. The prompts for each preset are customizable, as well as its output strategy (write to clipboard or replace the highlighted text).
 
 **Current presets**
